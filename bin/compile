@@ -50,7 +50,7 @@ function get_bundle_cache {
 function store_bundle_cache {
   set -x
   mkdir -p $BUNDLE_CACHE
-  pushd
+  pushd $BUNDLE_DIR
   find . -name .git -prune -o -print0 | cpio -pmd0 $BUNDLE_CACHE
   popd
 }
