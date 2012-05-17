@@ -49,7 +49,7 @@ function get_bundle_cache {
 
 function store_bundle_cache {
   mkdir -p $BUNDLE_CACHE
-  cp -ru $BUNDLE_DIR/* $BUNDLE_CACHE
+  rsync -rv --exclude=.git $BUNDLE_DIR/ $BUNDLE_CACHE
 }
 
 function bundle_install {
